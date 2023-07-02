@@ -1,19 +1,20 @@
 @import '../core/variables.scss';
 @import '../core/mixins.scss';
 
-.cards{
-   display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    @include desktop() {
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 50px;
+  @include desktop() {
     margin-top: 15px;
-    }
+  }
 }
-.card{
+.card {
   border: 2px solid #9dee2c;
   border-radius: 5px;
-  background-color:#9dee2c ;
+  background-color: #9dee2c;
   list-style-type: none;
   width: 150px;
   & > a {
@@ -34,38 +35,33 @@
     justify-content: space-between;
     align-items: flex-start;
     color: blue;
-
   }
- &__name{
-  font-family: $principal-font;
-  font-size: 1.6rem;
-  
-  
- }
- &__species{
-  font-family: $principal-font;
+  &__name {
+    font-family: $principal-font;
+    font-size: 1.6rem;
+  }
+  &__species {
+    font-family: $principal-font;
     font-size: 1.6rem;
   }
   &__status {
     font-family: $principal-font;
-      font-size: 1.4rem;
-      background:#42366f;
-      color: white;
-      border-radius: 5px;
-      padding-left: 20px;
-      padding-right: 20px;
-    
+    font-size: 1.4rem;
+    background: #42366f;
+    color: white;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
-  &:hover{
+  &:hover {
     transform: translateY(-5px);
     border: 4px solid #6a628f;
     background-color: #6a628f;
-
   }
 }
 
-.not_Found{
+.not_Found {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -76,23 +72,18 @@
   }
   &__title {
     font-family: $error-font;
-      font-size: 1.5rem;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
   }
 
-  &__img{
+  &__img {
     width: 200px;
     margin-bottom: 30px;
     border-radius: 15px;
     box-shadow: #42366f;
     box-shadow: 19px 5px 25px -3px rgb(27, 70, 139);
+    @include desktop() {
+      width: 400px;
+    }
   }
-
 }
-
-.arrow__container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-

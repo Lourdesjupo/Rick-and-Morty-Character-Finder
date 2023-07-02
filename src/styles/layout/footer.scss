@@ -2,17 +2,32 @@
 
 .footer {
   background-color: #c27bc9d1;
+  display:flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
 }
 
 .footer__text {
+  margin-left: 15px;
   font-size: 1.5rem;
   font-weight: bold;
   font-family: $principal-font;
-
 }
 .footer__subtext {
-    font-size: 1.4rem;
-      font-weight: bold;
-      font-family: $principal-font;
+    margin-left: 15px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-family: $principal-font;
+}
 
+.arrow__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-38px);
+}
+
+.arrowUp {
+  font-size: 3rem;
+  text-decoration-line: none;
 }

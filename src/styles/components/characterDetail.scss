@@ -47,7 +47,7 @@
   font-family: $error-font;
   font-size: 1.2rem;
   text-decoration-line: none;
-      @include desktop() {
-margin-left: 100px;
-        }
+  @include desktop() {
+    margin-left: 100px;
+  }
 }
