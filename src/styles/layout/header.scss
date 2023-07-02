@@ -1,0 +1,17 @@
+@import '../core/mixins.scss';
+
+.header {
+  background-image: url('/images/fondo.png');
+  background-size: cover;
+  background-position: center;
+  height: 150px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.header--logo {
+  height: 60%;
+  @include tablet() {
+    height: 100%;
+  }
+}

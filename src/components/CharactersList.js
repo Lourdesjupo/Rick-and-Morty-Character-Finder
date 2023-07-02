@@ -1,24 +1,27 @@
-import CharacterCard from "./CharacterCard"
+import CharacterCard from './CharacterCard';
 
-function CharacterList ( {characters,term}) {
- 
-  if(characters.length === 0) {
+function CharacterList({ characters, term }) {
+  if (characters.length === 0) {
     return (
-      <>
-        <h2>{`No hay ningún personaje que coincida con la palabra ${term}`}</h2>
-        <img src="/images/notFound.gif" alt="No encontrado" />
-      </>
+      <div className='not_Found'>
+        <h2 className='not_Found__title'>{`No hay ningún personaje que coincida con la palabra ${term}`}</h2>
+        <img
+          className='not_Found__img'
+          src='/images/notFound.gif'
+          alt='No encontrado'
+        />
+      </div>
     );
   }
 
   const htmlList = characters
-    .sort((a,b) => {
-      if(a.name > b.name) {
-        return 1
-      }else if (a.name < b.name) {
+    .sort((a, b) => {
+      if (a.name > b.name) {
+        return 1;
+      } else if (a.name < b.name) {
         return -1;
-      }else{
-        return 0
+      } else {
+        return 0;
       }
     })
     .map((character) => (
@@ -28,9 +31,9 @@ function CharacterList ( {characters,term}) {
     ));
 
   return (
-    <ul className="cards">
-      {htmlList}
-    </ul>
-  )
+  <>
+    <ul className='cards'>{htmlList}</ul>
+
+  </>);
 }
-export default CharacterList
+export default CharacterList;

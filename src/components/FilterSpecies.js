@@ -24,8 +24,11 @@ function FilterSpecies({ species, handleFilter, speciesList }) {
 
  console.log('noRepes', noRepeatSpeciesOptions)
   return (
-    <label htmlFor=''>
+    <label className='form_filters__bySpecies label' htmlFor='filterSpecies'>
+
+      Filtra por especie
       <select
+        className='form_filters__bySpecies'
         name='filterSpecies'
         id='filterSpecies'
         value={species}

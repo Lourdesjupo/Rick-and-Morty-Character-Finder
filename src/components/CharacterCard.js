@@ -8,9 +8,15 @@ function CharacterCard({ character }) {
         src={character.photo}
         alt={`foto de ${character.name}`}
       />
-      <h3 className='card__name'>{character.name}</h3>
-      <p className='card__species'>{character.species}</p>
-      <p className='card__status'>{character.status === 'Dead'? '☠️': character.status }</p>
+      <div className='card__description'>
+        <div>
+          <h3 className='card__name'>{character.name}</h3>
+          <p className='card__species'>{character.species}</p>
+        </div>
+        <div className='card__status--container' >
+          <p className='card__status'>{character.status === 'Dead'? '☠️': character.status }</p>
+        </div>
+      </div>
     </Link>
   );
 }

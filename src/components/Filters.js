@@ -4,7 +4,7 @@ import FilterSpecies from './FilterSpecies'
 function Filters({ searchByCharacter, handleFilter, filterSpecies,  speciesList }) {
   const handleSubmit = (ev) => ev.preventDefault();
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="form_filters" onSubmit={handleSubmit}>
       <SearchCharacter
         searchByCharacter={searchByCharacter}
         handleFilter={handleFilter}

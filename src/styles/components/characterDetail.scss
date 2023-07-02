@@ -1,0 +1,53 @@
+@import '../core/variables.scss';
+@import '../core/mixins.scss';
+
+.characterDetail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include desktop() {
+    flex-direction: row;
+    margin-left: 80px;
+  }
+
+  margin-top: 20px;
+
+  &__img {
+    border-radius: 20px 20px 0px 0px;
+    @include desktop() {
+      border-radius: 20px 0px 0px 20px;
+    }
+  }
+  &__description {
+    background-color: #6e6395;
+    padding-left: 10px;
+    border-radius: 0px 0px 20px 20px;
+    font-family: $principal-font;
+    color: white;
+    @include desktop() {
+      padding-top: 25px;
+      border-radius: 0px 20px 20px 0px;
+    }
+  }
+  &__name {
+    font-size: 1.9rem;
+  }
+  &__species,
+  &__status,
+  &__episodes,
+  &__origin {
+    font-size: 1.8rem;
+  }
+
+  &__origin {
+    padding-bottom: 15px;
+  }
+}
+.back {
+  font-family: $error-font;
+  font-size: 1.2rem;
+  text-decoration-line: none;
+      @include desktop() {
+margin-left: 100px;
+        }
+}

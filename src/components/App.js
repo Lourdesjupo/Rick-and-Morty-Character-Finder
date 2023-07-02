@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
 import { useLocation, matchPath } from 'react-router';
-import '../styles/App.css';
 import getDataFromApi from '../services/api';
 import CharacterList from './CharactersList';
 import Filters from './Filters';
 import CharacterDetail from './CharacterDetail';
+import '../styles/app.scss';
+import '../styles/core/reset.scss';
+import '../styles/layout/header.scss';
+import '../styles/components/filters.scss';
+import '../styles/components/cards.scss'
+import '../styles/components/characterDetail.scss'
+import '../styles/layout/footer.scss'
+
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -49,19 +56,22 @@ function App() {
   //Routes
   const { pathname } = useLocation();
   const routeData = matchPath('/character/:characterId', pathname);
-  console.log('routeData', routeData);
   const characterId = routeData?.params.characterId;
   const characterDataId = characters.find(
     (character) => character.id === parseInt(characterId)
   );
-  console.log('dataID', characterDataId, 'lo que es de data', characterId, 'characters', characters);
+  
 
   return (
     <>
-      <header>
-        <img src='header--logo' alt='logo Rick and morty' />
+      <header className='header'>
+        <img
+          className='header--logo'
+          src='/images/team.png'
+          alt='logo Rick and morty'
+        />
       </header>
-      <main>
+      <main class='main_app'>
         <Routes>
           <Route
             path='/'
@@ -71,8 +81,8 @@ function App() {
                   <Filters
                     searchByCharacter={searchByCharacter}
                     handleFilter={handleFilter}
-                    filterSpecies ={species}
-                    speciesList = {speciesList}
+                    filterSpecies={species}
+                    speciesList={speciesList}
                   />
                 </aside>
                 <section>
@@ -86,15 +96,21 @@ function App() {
           />
           <Route
             path='/character/:characterId'
-            element={
-              <CharacterDetail
-                characterDataId={characterDataId}
-              />
-            }
+            element={<CharacterDetail characterDataId={characterDataId} />}
           />
         </Routes>
       </main>
-      <footer></footer>
+      <footer className='footer'>
+        <div className='arrow__container'>
+          <a className='arrowUp' href='#'>
+            🔝
+          </a>
+        </div>
+        <small>
+          <p className='footer__text'>&copy;Adalab 2023 </p>
+          <span className='footer__subtext'>Made with💖LourdesJupo</span>
+        </small>
+      </footer>
     </>
   );
 }

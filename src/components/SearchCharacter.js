@@ -6,9 +6,10 @@ function SearchCharacter({ searchByCharacter, handleFilter }) {
   }
 
   return (
-    <label htmlFor='searchByName'>
+    <label className='form_filters__byName label' htmlFor='searchByName'>
+      Busca por nombre
       <input
-        className=''
+        className='form_filters__byName'
         type='text'
         name='searchCharacter'
         id='searchCharacter'
