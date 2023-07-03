@@ -95,7 +95,7 @@ function App() {
       <header className='header'>
         <img
           className='header--logo'
-          src='/images/team.png'
+          src='images/team.png'
           alt='logo Rick and morty'
         />
       </header>
