@@ -6,10 +6,5 @@
   align-items: center;
   background: linear-gradient(90deg, #0cb3c5, #9ed64f);
   min-height: 100vh;
-  @include desktop(){
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-  }
 }
 
