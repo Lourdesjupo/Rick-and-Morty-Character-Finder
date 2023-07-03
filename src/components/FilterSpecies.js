@@ -22,7 +22,7 @@ function FilterSpecies({ species, handleFilter, speciesList }) {
 
 
 
- console.log('noRepes', noRepeatSpeciesOptions)
+
   return (
     <label className='form_filters__bySpecies label' htmlFor='filterSpecies'>
 

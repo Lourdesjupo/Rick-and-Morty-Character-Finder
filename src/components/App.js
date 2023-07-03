@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 import { useLocation, matchPath } from 'react-router';
-import getDataFromApi from '../services/api';
+import getData from '../services/api';
 import CharacterList from './CharactersList';
 import Filters from './Filters';
 import CharacterDetail from './CharacterDetail';
@@ -12,34 +12,62 @@ import '../styles/components/filters.scss';
 import '../styles/components/cards.scss'
 import '../styles/components/characterDetail.scss'
 import '../styles/layout/footer.scss'
-
+import '../styles/components/pagination.scss'
+import Pagination from './Pagination';
 
 function App() {
   const [characters, setCharacters] = useState([]);
   const [searchByCharacter, setSearchByCharacter] = useState('');
   const [species, setSpecies]=useState('all')
+  const [actualURL, setactualURL] = useState()
+  const [actualPage, setactualPage] =useState(1)
+  const [actualInfo, setActualInfo] = useState({})
 
 
   useEffect(() => {
-    getDataFromApi().then((characters) => {
-      setCharacters(characters);
-      console.log(characters);
-    });
-  }, []);
+    console.log(
+      'actualURl',
+      actualURL,
+      'searchname',
+      searchByCharacter,
+      'species',
+      species
+    );
+    getData(actualURL, searchByCharacter, species).then((charactersData) => {
 
+      setCharacters(charactersData.results[0]);
+      setActualInfo(charactersData.info);
+    });
+  }, [actualURL, searchByCharacter, species]);
+  
   //eventos
   const handleFilter = (varName, varValue) => {
     if (varName === 'name') {
       setSearchByCharacter(varValue);
+      setactualURL();
     } else if(varName==='species') {
       setSpecies(varValue)
+      setactualURL();
     }
   };
+
+  //pages
+  const handlePages = (varValue) => {
+    if (varValue === 'null') {
+    return actualURL;
+  } else if (varValue === 'next') {
+     setactualURL(actualInfo.next);
+     return setactualPage(actualPage + 1);
+  } else if (varValue === 'prev') {
+    setactualURL(actualInfo.prev);
+     return setactualPage(actualPage - 1);
+  }
+  }
 
   //filters
 
   const searchedCharacters = characters.filter((character) => {
-    return character.name
+      return character.name
       .toLowerCase()
       .includes(searchByCharacter.toLowerCase());
   }).filter((character)=>{
@@ -71,7 +99,7 @@ function App() {
           alt='logo Rick and morty'
         />
       </header>
-      <main class='main_app'>
+      <main className='main_app'>
         <Routes>
           <Route
             path='/'
@@ -85,6 +113,13 @@ function App() {
                     speciesList={speciesList}
                   />
                 </aside>
+                <section>
+                  <Pagination
+                    handlePages={handlePages}
+                    actualPage={actualPage}
+                    pages={actualInfo.pages}
+                  />
+                </section>
                 <section>
                   <CharacterList
                     characters={searchedCharacters}

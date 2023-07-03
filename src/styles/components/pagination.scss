@@ -1,0 +1,27 @@
+@import '../core/variables.scss';
+
+.disabled {
+  display: none;
+}
+
+.input__Previous {
+  width: 75px;
+  height: 20px;
+  font-family: $principal-font;
+  margin-right: 5px;
+  background-color: #25dff4;
+}
+.input__Next {
+  width: 75px;
+  height: 20px;
+  font-family: $principal-font;
+  margin-left: 5px;
+  background-color: #25dff4;
+}
+
+.form__Pagination {
+  margin-bottom: 20px;
+  font-family: $principal-font;
+  font-weight: bold;
+  font-size: 16px;
+}
