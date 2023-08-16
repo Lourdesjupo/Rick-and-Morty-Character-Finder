@@ -15,6 +15,18 @@ Ejercicio consistente en el desarrollo de una página web con el listado de pers
 🔸GULP + Starterkit proporcionado por Adalab    
 🔸GitHub Pages    
 
+## Puntos Claves
+
+✅ Llamada a una API  
+✅ Búsqueda en API  
+✅ Paginación  
+✅ Estructura de componentes  
+✅ Uso métodos funcionales de array  
+✅ Uso eventos en React  
+✅ Uso Hooks para las peticiones al servidor  
+✅ Uso React Router  
+✅ Diseño mobile first    
+
 ## Especificaciones del ejercicio
 📍Se deben listar los personajes de Rick and Morty, para ello utilizaremos el siguiente servicio:  
 
@@ -30,7 +42,7 @@ https://rickandmortyapi.com/documentation/#get-all-characters
 
 
 
-💫**BONUS**
+💫**Bonus**
 
 - [x] Mostrar la especie
 - [x] Mostrar si un personaje está muerto con un icono 
@@ -38,7 +50,7 @@ https://rickandmortyapi.com/documentation/#get-all-characters
 - [x] Ordenación de los personajes alfabeticamente por nombre
 - [x] Creación de un nuevo filtro para poder buscar por especie
 
-🛫 **Mejoras sobre el ejercicio**   
+🛫 **Mejoras personales sobre el ejercicio**   
 - [x] Páginación 
 
 ## Arranque del proyecto
