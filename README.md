@@ -1,3 +1,5 @@
+![RickAndMorty](https://github.com/Lourdesjupo/Rick-and-Morty-Character-Finder/assets/126502912/86deb521-2ba3-493e-ac30-9c6246f74b70)
+
 # Rick and Morty buscador de personajes - REACT
 
 Ejercicio consistente en el desarrollo de una página web con el listado de personajes de Rick and Morty donde se podrá filtrar por el nombre del personaje.  
